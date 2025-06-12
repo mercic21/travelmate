@@ -1,10 +1,14 @@
 const express = require('express');
 const router = express.Router();
 const { protect, adminOnly } = require('../middleware/auth');
-const { getAllBookings, createListing } = require('../controllers/adminController');
+const adminController = require('../controllers/adminController');
 
-router.use(protect, adminOnly);
-router.get('/bookings', getAllBookings);
-router.post('/listings', createListing);
+// Apply middleware first
+router.use(protect);
+router.use(adminOnly);
+
+// Define routes
+router.get('/bookings', adminController.getAllBookings);
+router.post('/listings', adminController.createListing);
 
 module.exports = router;
