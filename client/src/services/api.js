@@ -2,7 +2,7 @@ import axios from 'axios';
 import toast from 'react-hot-toast';
 
 const api = axios.create({
-  baseURL: "https://travelmate-58h3.onrender.com",
+  baseURL: "https://travelmate-58h3.onrender.com/api",
   timeout: 10000,
   withCredentials: true,
   headers: {
@@ -37,7 +37,7 @@ api.interceptors.response.use(
 export const authAPI = {
   login: async (credentials) => {
     try {
-      const response = await axios.post('/api/auth/login', credentials);
+      const response = await api.post('/auth/login', credentials);
       const data = response.data;
       
       // Transform the response to match expected structure
