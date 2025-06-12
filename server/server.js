@@ -3,7 +3,7 @@ const cors = require('cors');
 const morgan = require('morgan');
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
-const adminRoutes = require('./routes/adminRoute');
+const adminRoutes = require('./routes/adminRoutes');
 const errorHandler = require('./utils/errorHandler');
 const paymentRoutes = require('./routes/paymentRoutes');
 
