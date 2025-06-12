@@ -3,6 +3,7 @@ const cors = require('cors');
 const morgan = require('morgan');
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
+const adminRoutes = require('./routes/adminRoute');
 const errorHandler = require('./utils/errorHandler');
 const paymentRoutes = require('./routes/paymentRoutes');
 
@@ -58,7 +59,7 @@ app.use('/api/hotels', require('./routes/hotelRoutes'));
 app.use('/api/events', require('./routes/eventRoutes'));
 app.use('/api/payments', paymentRoutes);
 
-
+app.use('/api/admin', adminRoutes);
 app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
