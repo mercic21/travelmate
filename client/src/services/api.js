@@ -38,7 +38,7 @@ export const authAPI = {
   login: async (credentials) => {
     try {
       const response = await api.post('/auth/login', credentials);
-      const data = response.data;
+      const data = response;
       
       // Transform the response to match expected structure
       return {
