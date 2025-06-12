@@ -32,8 +32,7 @@ const app = express();
 
 // CORS configuration
 app.use(cors({
-  origin: 'https://travelmate-delta.vercel.app/', 
-  credentials: true,
+  origin: 'https://travelmate-delta.vercel.app', 
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
