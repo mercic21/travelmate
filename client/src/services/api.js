@@ -2,7 +2,7 @@ import axios from 'axios';
 import toast from 'react-hot-toast';
 
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL,
+  baseURL: "https://travelmate-58h3.onrender.com",
   timeout: 10000,
   withCredentials: true,
   headers: {
