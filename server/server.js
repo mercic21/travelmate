@@ -52,6 +52,9 @@ if (process.env.NODE_ENV === 'development') {
 app.get('/api/health', (req, res) => {
   res.json({ status: 'Server is running' });
 });
+app.get('/admin', (req, res) => {
+  res.redirect('https://travelmate-delta.vercel.app/admin');
+});
 
 
 app.use('/api/auth', require('./routes/authRoutes'));
