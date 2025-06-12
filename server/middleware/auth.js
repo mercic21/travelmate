@@ -24,4 +24,12 @@ const protect = asyncHandler(async (req, res, next) => {
   }
 });
 
-module.exports = { protect };
+const adminOnly = asyncHandler(async (req, res, next) => {
+  if (!req.user.isAdmin || req.user.email !== 'admin@travelmate.com') {
+    res.status(403);
+    throw new Error('Not authorized as admin');
+  }
+  next();
+});
+
+module.exports = { protect, adminOnly };
